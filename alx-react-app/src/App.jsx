@@ -6,16 +6,13 @@ import UserProfile from "./components/UserProfile";
 import "./App.css";
 
 function App() {
-  
-
   return (
     <>
       <WelcomeMessage />
       <Header />
       <MainContent />
       <Footer />
-      <UserProfile name="Ephy" age="20" bio="Loves coding and listening to music"/>
-    
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
     </>
   );
 }

@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -20,7 +19,6 @@ function Contact() {
 
   return (
     <>
-      <Navbar />
       <div
         style={{
           padding: "20px",
@@ -114,7 +112,6 @@ function Contact() {
           </button>
         </form>
       </div>
-      <Footer/>
     </>
   );
 }

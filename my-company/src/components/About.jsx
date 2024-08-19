@@ -1,10 +1,7 @@
-import Navbar from "./Navbar";
-import Footer from "./Footer"
 
 function About() {
     return (
       <>
-      <Navbar/>
       <div
         style={{
           padding: '20px',
@@ -38,7 +35,6 @@ function About() {
           Our company has been providing top-notch services since 1990. We specialize in various fields including technology, marketing, and consultancy.
         </p>
       </div>
-      <Footer/>
       </>
     );
   }

@@ -1,10 +1,8 @@
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+
 
 function Home() {
     return (
       <>
-      <Navbar/>
       <div
         style={{
           padding: '20px',
@@ -38,7 +36,6 @@ function Home() {
           We are dedicated to delivering excellence in all our services.
         </p>
       </div>
-      <Footer/>
       </>
     );
   }

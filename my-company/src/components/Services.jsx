@@ -1,10 +1,6 @@
-import Footer from "./Footer";
-import Navbar from "./Navbar";
-
 function Services() {
   return (
     <>
-      <Navbar />
       <div
         style={{
           padding: "20px",
@@ -70,7 +66,6 @@ function Services() {
           </li>
         </ul>
       </div>
-      <Footer/>
     </>
   );
 }

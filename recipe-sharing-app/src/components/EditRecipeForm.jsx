@@ -32,7 +32,7 @@ function EditRecipeForm({ recipeId }) {
         value={newDescription}
         placeholder="Enter new description"
       />
-      <button type="submit">Update Recipe</button>
+      <button type="submit" className="add-recipe-btn">Update Recipe</button>
     </form>
   );
 }

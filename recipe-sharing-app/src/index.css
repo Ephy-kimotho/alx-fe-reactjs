@@ -1,74 +1,137 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-main{
+main {
   min-height: 100vh;
-  background-color: #7d7d7e;
+  background-color: #FBCEB1;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 40px 0;
 }
 
-form, .recipe-list{
+form,
+.recipe-list {
   display: grid;
-  gap:1.125rem;
-  width:80%;
+  gap: 1.125rem;
+  width: 80%;
   max-width: 700px;
   margin-inline: auto;
-  padding:20px;
-  background-color: white;
+  padding: 20px;
+  background-color: #FFDEAD;
 }
 
-.recipe-list{
+.recipe-list {
   margin-top: 30px;
 }
 
-.recipe{
+.recipe {
   background-color: teal;
-  color:white ;
-  padding: 1.3rem;
+  color: white;
+  padding: 15px;
   border-radius: 5px;
 }
 
-a{
+a {
   display: inline-block;
   margin: 10px;
 }
 
-.view-link{
+.nav-link{
+  background-color: transparent;
+  font-size: 1.125rem;
+  text-decoration: none;
+  color:#FF4F00;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav-link:active{
+  text-decoration: underline;
+  color:#00AEFF;
+}
+
+.view-link {
   margin: 10px 0;
   text-decoration: none;
   color: #333;
   font-weight: bold;
 }
 
-.view-link:hover{
+.view-link:hover {
   text-decoration: underline;
 }
 
-.edit-recipe-form{
+.edit-recipe-form {
   width: 100%;
   max-width: 600px;
   margin-block: 30px;
+  background-color: #90EE90;
+  border-radius: 6px;
 }
 
-.delete-btn{
+button:active {
+  box-shadow: inset 4px 4px 4px rgba(40, 40, 40, 0.6);
+}
+
+button {
   display: block;
-  margin: 0 auto;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: lightcoral;
-  color: white;
   font-size: 1.125rem;
   font-weight: bold;
   cursor: pointer;
+  color: white;
 }
 
-.delete-btn:active{
-  box-shadow: inset 4px 4px 4px rgba(40,40,40, 0.6);
+.delete-btn {
+  margin: 0 auto;
+  background-color: lightcoral;
+}
+
+.add-fav-btn{
+  background-color: rgb(2, 15, 75);
+  padding: 6px 10px;
+  font-size:0.85rem ;
+}
+
+.remove-fav-btn{
+  background-color: lightcoral;
+  padding: 6px 10px;
+  font-size:0.85rem;
+  margin: 10px 0;
+  margin-left:auto ;
+}
+
+.add-recipe-btn{
+  background-color: tomato;
+}
+
+.links-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+input, textarea{
+  border: none;
+  font-size: 1.125rem;
+  background-color: #F0F8FF;
+  border-radius: 5px;
+  letter-spacing: 1.2px;
+}
+
+input{
+  padding:10px 10px 10px 18px;
+}
+
+textarea{
+  padding: 10px 20px 10px 18px;
+}
+
+p{
+  margin-top:10px;
 }

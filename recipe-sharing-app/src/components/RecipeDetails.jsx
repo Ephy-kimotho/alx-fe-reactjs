@@ -19,7 +19,7 @@ function RecipeDetails() {
   }
 
   return (
-    <div>
+    <div className="recipe-list">
       <h1>{currentRecipe.title}</h1>
       <p>{currentRecipe.description}</p>
       <EditRecipeForm  recipeId={recipeId}/>

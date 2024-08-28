@@ -26,7 +26,7 @@ const AddRecipeForm = () => {
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Enter Description"
       />
-      <button type="submit">Add Recipe</button>
+      <button type="submit" className="add-recipe-btn">Add Recipe</button>
     </form>
   );
 };

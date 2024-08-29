@@ -11,7 +11,10 @@ function FavoritesList() {
 
   return (
     <section className="recipe-list">
-      <h2>My Favourite Recpies</h2>
+      <h2>
+        My Favourite Recpies
+        <div className="underline underline-fav"></div>
+      </h2>
       {favorites.map((recipe) => {
         return (
           <div key={recipe.id} className="recipe">

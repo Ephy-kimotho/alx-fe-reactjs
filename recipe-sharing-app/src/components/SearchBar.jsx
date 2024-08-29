@@ -22,7 +22,7 @@ function SearchBar() {
   return (
     <input
       type="text"
-      placeholder="Search recipes....."
+      placeholder="Search a recipe..."
       onChange={handleChange}
       value={searchTerm}
       style={styles}

@@ -14,7 +14,10 @@ function RecommendationsList() {
 
   return (
     <section className="recipe-list">
-      <h2>YOUR RECOMMENDATIONS</h2>
+      <h2>
+        Your Recommendations
+        <div className="underline underline-rec"></div>
+      </h2>
       {recommendations.map((recipe) => {
         return (
           <article key={recipe.id} className="recipe">

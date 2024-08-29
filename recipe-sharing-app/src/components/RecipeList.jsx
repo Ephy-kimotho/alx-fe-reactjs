@@ -10,6 +10,10 @@ const RecipeList = () => {
     <>
       <SearchBar />
       <div className="recipe-list">
+        <h2>
+          My Recipies
+          <div className="underline"></div>
+        </h2>
         {recipes.map((recipe) => (
           <div key={recipe.id} className="recipe">
             <h3>{recipe.title}</h3>

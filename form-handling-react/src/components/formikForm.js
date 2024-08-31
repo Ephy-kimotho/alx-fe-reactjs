@@ -1,17 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-const schema = Yup.object({
-  username: Yup.string()
-    .min(5, "Must be 5 or more characters")
-    .max(18, "Must be 18 or less characters")
-    .required("Required"),
-  email: Yup.string().email("Invalid email address").required("Required"),
-  password: Yup.string()
-    .min(8, "Must be greater than 8 characters")
-    .required("Required"),
-});
-
 export function formikForm() {
   return (
     <Formik
@@ -20,7 +9,11 @@ export function formikForm() {
         email: "",
         password: "",
       }}
-      validationSchema={schema}
+      validationSchema={Yup.object({
+        username: Yup.string().required(),
+        email: Yup.string().email().required(),
+        password: Yup.string().required(),
+      })}
       onSubmit={async (values, actions) => {
         await new Promise((resolve) => setTimeout(resolve, 1500));
         console.log("Form values: ", values);
@@ -38,7 +31,7 @@ export function formikForm() {
           <ErrorMessage
             name="username"
             component="div"
-            style={{ color: "red", fontSize: "14px", margin:"10px 0" }}
+            style={{ color: "red", fontSize: "14px", margin: "10px 0" }}
           />
 
           <label htmlFor="email">Email</label>
@@ -46,7 +39,7 @@ export function formikForm() {
           <ErrorMessage
             name="email"
             component="div"
-            style={{ color: "red", fontSize: "14px", margin:"10px 0" }}
+            style={{ color: "red", fontSize: "14px", margin: "10px 0" }}
           />
 
           <label htmlFor="password">Password</label>
@@ -58,7 +51,7 @@ export function formikForm() {
           <ErrorMessage
             name="password"
             component="div"
-            style={{ color: "red", fontSize: "14px", margin:"10px 0" }}
+            style={{ color: "red", fontSize: "14px", margin: "10px 0" }}
           />
 
           <div>

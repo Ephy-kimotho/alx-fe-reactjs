@@ -1,26 +1,30 @@
 import { useState } from "react";
 
 function RegistrationForm() {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+  const [username, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const [errors, setErrors] = useState({});
 
   /* on change handler */
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+  function handleUserNameChange(e) {
+    const { value } = e.target;
+    setUserName(value);
   }
 
+  function handleEmailChange(e) {
+    const { value } = e.target;
+    setEmail(value);
+  }
+
+  function handlePassword(e) {
+    const { value } = e.target;
+    setPassword(value);
+  }
   /* submit handler */
   function handleSubmit(e) {
     e.preventDefault();
-    const { username, email, password } = formData;
     const newErrors = {};
     let isValid = true;
 
@@ -65,8 +69,8 @@ function RegistrationForm() {
           type="text"
           name="username"
           id="username"
-          value={formData.username}
-          onChange={handleChange}
+          value={username}
+          onChange={handleUserNameChange}
           className={errors.username ? "error" : ""}
           placeholder="Enter your username"
         />
@@ -83,8 +87,8 @@ function RegistrationForm() {
           type="email"
           name="email"
           id="email"
-          value={formData.email}
-          onChange={handleChange}
+          value={email}
+          onChange={handleEmailChange}
           className={errors.email ? "error" : ""}
           placeholder="Enter your email"
         />
@@ -101,8 +105,8 @@ function RegistrationForm() {
           type="password"
           name="password"
           id="password"
-          value={formData.password}
-          onChange={handleChange}
+          value={password}
+          onChange={handlePassword}
           className={errors.password ? "error" : ""}
           placeholder="Enter your password"
         />

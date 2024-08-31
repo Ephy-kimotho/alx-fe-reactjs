@@ -49,7 +49,7 @@ export function formikForm() {
             style={{ color: "red", fontSize: "14px", margin:"10px 0" }}
           />
 
-          <label htmlFor="password"></label>
+          <label htmlFor="password">Password</label>
           <Field
             name="password"
             id="password"

@@ -10,7 +10,9 @@ function PostsComponent() {
     queryKey: ["posts"],
     queryFn: () => fetchPosts("https://jsonplaceholder.typicode.com/posts"),
     staleTime: 3000,
-    gcTime: 6000,
+    cacheTime: 6000,
+    refetchOnWindowFocus:true,
+    keepPreviousData:true,
   });
 
   if (isError) {

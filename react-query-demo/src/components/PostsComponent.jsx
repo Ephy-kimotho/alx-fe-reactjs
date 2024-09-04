@@ -1,14 +1,14 @@
 import { useQuery } from "react-query";
 
-async function getTodos(url) {
+async function fetchPosts(url) {
   const res = await fetch(url);
   return await res.json();
 }
 
 function PostsComponent() {
   const { data, isError, isLoading, refetch } = useQuery({
-    queryKey: ["todos"],
-    queryFn: () => getTodos("https://jsonplaceholder.typicode.com/posts"),
+    queryKey: ["posts"],
+    queryFn: () => fetchPosts("https://jsonplaceholder.typicode.com/posts"),
     staleTime: 3000,
     gcTime: 6000,
   });

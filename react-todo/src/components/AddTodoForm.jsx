@@ -27,7 +27,7 @@ function AddTodoForm({ addTodo }) {
         onChange={handleChange}
         placeholder="Enter a task..."
       />
-      <button type="submit">Add</button>
+      <button type="submit" className="add-btn">Add</button>
     </form>
   );
 }

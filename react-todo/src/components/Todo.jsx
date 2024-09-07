@@ -5,7 +5,7 @@ function Todo({ title, isCompleted, toggleTodo, deleteTodo }) {
         <h3>{title}</h3>
         <p>{isCompleted ? "Completed" : "Not Completed"}</p>
       </div>
-      <button onClick={deleteTodo}>Delete</button>
+      <button onClick={deleteTodo} className="delete-btn">Delete</button>
     </article>
   );
 }

@@ -1,7 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Link, Routes, Route } from "react-router-dom";
-import ProfileDetails from "./ProfileDetails";
-import ProfileSettings from "./ProfileSettings";
+import { Link } from "react-router-dom";
 
 function Profile() {
   return (
@@ -12,10 +10,6 @@ function Profile() {
         <p>Email: john@gmail.com</p>
         <p>Phone: +254712345678</p>
       </div>
-      <Routes>
-        <Route path="profiledetails" element={<ProfileDetails />} />
-        <Route path="profilesettings" element={<ProfileSettings />} />
-      </Routes>
 
       <nav>
         <ul style={{ padding: "10px" }}>
@@ -25,8 +19,6 @@ function Profile() {
           <Link to="profilesettings">ProfileSettings</Link>
         </ul>
       </nav>
-
-    
 
       <div>
         <Outlet />

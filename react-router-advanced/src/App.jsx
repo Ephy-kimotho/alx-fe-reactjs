@@ -4,6 +4,8 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import AuthProvider from "./components/AuthProvider";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ProfileDetails from "./components/ProfileDetails";
+import ProfileSettings from "./components/ProfileSettings";
 import Login from "./components/Login";
 import BlogPost from "./components/BlogPost";
 import "./App.css";
@@ -20,11 +22,14 @@ function App() {
           <Route
             path="/profile"
             element={
-              <ProtectedRoute>
+              <ProtectedRoute path="/login">
                 <Profile />
               </ProtectedRoute>
             }
-          />
+          >
+            <Route path="profiledetails" element={<ProfileDetails />} />
+            <Route path="profilesettings" element={<ProfileSettings />} />
+          </Route>
         </Routes>
       </Router>
     </AuthProvider>

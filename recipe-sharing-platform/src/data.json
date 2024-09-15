@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "title": "Taco nanchas",
+        "summary": "Tacos are a traditional Mexican dish consisting of a folded or rolled tortilla filled with various ingredients like meat, beans, and vegetables. Originating from Mexico, they are a staple of Mexican street food and have gained worldwide popularity.",
+        "imageURL": "https://i.pinimg.com/236x/2f/8f/bd/2f8fbd88f439fead732e62c7dfe788e4.jpg"
+    },
+    {
+        "id": "2",
+        "title": "Chicken Tikka Masala",
+        "summary": "Chicken Tikka Masala is a popular dish of grilled marinated chicken in a spiced tomato-based curry. Though its exact origin is debated, it's widely associated with British Indian cuisine, often believed to have been created in the UK.",
+        "imageURL": "https://i.pinimg.com/564x/c6/65/c7/c665c758a0b5d5a6a93db951d11124d1.jpg"
+    },
+    {
+        "id": "3",
+        "title": "Spaghetti Carbonara",
+        "summary": "Spaghetti Carbonara is a classic Italian pasta dish from Rome, made with eggs, cheese, pancetta, and pepper. It originated during World War II and has since become a staple of Italian cuisine.",
+        "imageURL": "https://i.pinimg.com/564x/0a/1f/b8/0a1fb8575321de9bfeac4db8caec06ea.jpg"
+    },
+    {
+        "id": "4",
+        "title": "Jollo Rice",
+        "summary": "Jollof Rice is a vibrant, one-pot dish originating from West Africa, particularly Senegal. It’s made with rice, tomatoes, onions, and various spices. A beloved dish across West African countries, it has regional variations, with Nigeria and Ghana being known for their famous Jollof rice rivalry.",
+        "imageURL": "https://i.pinimg.com/564x/19/54/57/19545778f2360cf14e3ffe37d39d5b1f.jpg"
+    },
+    {
+        "id": "5",
+        "title": "Pizza",
+        "summary": "Pizza originated in Italy, specifically Naples, as a flatbread topped with tomatoes, cheese, and other ingredients. It's now a globally popular dish with numerous regional variations, making it a staple in fast food and gourmet dining alike.",
+        "imageURL": "https://i.pinimg.com/564x/95/6e/4d/956e4d1d84994663798e1ee97e47dfdb.jpg"
+    },
+    {
+        "id": "6",
+        "title": "Ramen",
+        "summary": "Ramen is a Japanese noodle soup dish with Chinese origins. It consists of wheat noodles served in a flavorful broth, typically with toppings like pork, eggs, and seaweed. Ramen has become a global favorite, known for its rich variety of flavors and regional styles.",
+        "imageURL": "https://i.pinimg.com/564x/3e/db/9a/3edb9a4ef4ac927aa280366d296f3e2e.jpg"
+    },
+    {
+        "id": "7",
+        "title": "Lasagna",
+        "summary": "Lasagna is another classic Italian dish. It consists of layered pasta sheets with a rich meat or vegetable sauce, béchamel, and cheese, baked to perfection. Originating from ancient Rome, it has evolved into a beloved comfort food worldwide.",
+        "imageURL": "https://i.pinimg.com/236x/fc/1f/fb/fc1ffbee3426a07f8e821145081c2e7b.jpg"
+    }
+]

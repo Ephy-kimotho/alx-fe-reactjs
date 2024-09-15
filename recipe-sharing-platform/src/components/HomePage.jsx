@@ -26,7 +26,7 @@ function HomePage() {
           Welcome to MapishiHub
         </h1>
       </div>
-      <div className="bg-gray grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="bg-gray grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {recipeElements}
       </div>
     </section>

@@ -1,44 +1,145 @@
 [
     {
         "id": "1",
-        "title": "Taco nanchas",
+        "title": "Taco Nanchas",
         "summary": "Tacos are a traditional Mexican dish consisting of a folded or rolled tortilla filled with various ingredients like meat, beans, and vegetables. Originating from Mexico, they are a staple of Mexican street food and have gained worldwide popularity.",
-        "imageURL": "https://i.pinimg.com/236x/2f/8f/bd/2f8fbd88f439fead732e62c7dfe788e4.jpg"
+        "imageURL": "https://i.pinimg.com/236x/2f/8f/bd/2f8fbd88f439fead732e62c7dfe788e4.jpg",
+        "ingredients": [
+            "Tortillas",
+            "Cooked ground beef",
+            "Shredded lettuce",
+            "Diced tomatoes",
+            "Shredded cheese",
+            "Sour cream",
+            "Salsa"
+        ],
+        "instructions": [
+            "Warm the tortillas in a skillet or microwave.",
+            "Spoon the cooked ground beef onto each tortilla.",
+            "Add lettuce, tomatoes, cheese, and sour cream as desired.",
+            "Fold the tortilla and serve with salsa."
+        ]
     },
     {
         "id": "2",
         "title": "Chicken Tikka Masala",
         "summary": "Chicken Tikka Masala is a popular dish of grilled marinated chicken in a spiced tomato-based curry. Though its exact origin is debated, it's widely associated with British Indian cuisine, often believed to have been created in the UK.",
-        "imageURL": "https://i.pinimg.com/564x/c6/65/c7/c665c758a0b5d5a6a93db951d11124d1.jpg"
+        "imageURL": "https://i.pinimg.com/564x/c6/65/c7/c665c758a0b5d5a6a93db951d11124d1.jpg",
+        "ingredients": [
+            "500g chicken breast",
+            "1 cup yogurt",
+            "1 tbsp garam masala",
+            "1 tsp turmeric",
+            "1 tsp cumin",
+            "1 can tomato sauce",
+            "1 cup heavy cream"
+        ],
+        "instructions": [
+            "Marinate the chicken in yogurt, garam masala, turmeric, and cumin for 1 hour.",
+            "Grill the chicken until fully cooked.",
+            "In a pan, simmer the tomato sauce and cream for 10 minutes.",
+            "Add the grilled chicken to the sauce and cook for another 5 minutes.",
+            "Serve with rice or naan."
+        ]
     },
     {
         "id": "3",
         "title": "Spaghetti Carbonara",
         "summary": "Spaghetti Carbonara is a classic Italian pasta dish from Rome, made with eggs, cheese, pancetta, and pepper. It originated during World War II and has since become a staple of Italian cuisine.",
-        "imageURL": "https://i.pinimg.com/564x/0a/1f/b8/0a1fb8575321de9bfeac4db8caec06ea.jpg"
+        "imageURL": "https://i.pinimg.com/564x/0a/1f/b8/0a1fb8575321de9bfeac4db8caec06ea.jpg",
+        "ingredients": [
+            "200g spaghetti",
+            "100g pancetta",
+            "2 eggs",
+            "1 cup grated Parmesan cheese",
+            "1 tsp black pepper"
+        ],
+        "instructions": [
+            "Cook the spaghetti according to package instructions.",
+            "Fry the pancetta until crispy.",
+            "In a bowl, whisk the eggs, Parmesan, and pepper together.",
+            "Drain the pasta and combine with pancetta.",
+            "Remove from heat, and quickly stir in the egg mixture to coat the pasta."
+        ]
     },
     {
         "id": "4",
-        "title": "Jollo Rice",
+        "title": "Jollof Rice",
         "summary": "Jollof Rice is a vibrant, one-pot dish originating from West Africa, particularly Senegal. It’s made with rice, tomatoes, onions, and various spices. A beloved dish across West African countries, it has regional variations, with Nigeria and Ghana being known for their famous Jollof rice rivalry.",
-        "imageURL": "https://i.pinimg.com/564x/19/54/57/19545778f2360cf14e3ffe37d39d5b1f.jpg"
+        "imageURL": "https://i.pinimg.com/564x/19/54/57/19545778f2360cf14e3ffe37d39d5b1f.jpg",
+        "ingredients": [
+            "2 cups long-grain rice",
+            "4 large tomatoes",
+            "2 tbsp tomato paste",
+            "1 onion, chopped",
+            "1 tsp thyme",
+            "1 tsp curry powder"
+        ],
+        "instructions": [
+            "Blend the tomatoes and tomato paste together.",
+            "In a large pot, sauté onions in oil until translucent.",
+            "Add the blended tomato mix, thyme, and curry powder, and cook for 10 minutes.",
+            "Add the rice and water, cover, and simmer until rice is cooked.",
+            "Fluff with a fork and serve."
+        ]
     },
     {
         "id": "5",
         "title": "Pizza",
         "summary": "Pizza originated in Italy, specifically Naples, as a flatbread topped with tomatoes, cheese, and other ingredients. It's now a globally popular dish with numerous regional variations, making it a staple in fast food and gourmet dining alike.",
-        "imageURL": "https://i.pinimg.com/564x/95/6e/4d/956e4d1d84994663798e1ee97e47dfdb.jpg"
+        "imageURL": "https://i.pinimg.com/564x/95/6e/4d/956e4d1d84994663798e1ee97e47dfdb.jpg",
+        "ingredients": [
+            "Pizza dough",
+            "1/2 cup tomato sauce",
+            "1 cup mozzarella cheese",
+            "Toppings of your choice (pepperoni, mushrooms, etc.)"
+        ],
+        "instructions": [
+            "Preheat oven to 220°C (430°F).",
+            "Spread tomato sauce on the pizza dough.",
+            "Sprinkle with cheese and add your desired toppings.",
+            "Bake for 10-12 minutes or until the crust is golden and the cheese is melted."
+        ]
     },
     {
         "id": "6",
         "title": "Ramen",
         "summary": "Ramen is a Japanese noodle soup dish with Chinese origins. It consists of wheat noodles served in a flavorful broth, typically with toppings like pork, eggs, and seaweed. Ramen has become a global favorite, known for its rich variety of flavors and regional styles.",
-        "imageURL": "https://i.pinimg.com/564x/3e/db/9a/3edb9a4ef4ac927aa280366d296f3e2e.jpg"
+        "imageURL": "https://i.pinimg.com/564x/3e/db/9a/3edb9a4ef4ac927aa280366d296f3e2e.jpg",
+        "ingredients": [
+            "Ramen noodles",
+            "2 cups chicken broth",
+            "1 egg, soft-boiled",
+            "1 tbsp soy sauce",
+            "Sliced pork",
+            "Seaweed"
+        ],
+        "instructions": [
+            "Cook the ramen noodles according to package instructions.",
+            "In a pot, heat chicken broth and soy sauce.",
+            "Add the noodles to the broth and stir.",
+            "Top with pork, soft-boiled egg, and seaweed."
+        ]
     },
     {
         "id": "7",
         "title": "Lasagna",
         "summary": "Lasagna is another classic Italian dish. It consists of layered pasta sheets with a rich meat or vegetable sauce, béchamel, and cheese, baked to perfection. Originating from ancient Rome, it has evolved into a beloved comfort food worldwide.",
-        "imageURL": "https://i.pinimg.com/236x/fc/1f/fb/fc1ffbee3426a07f8e821145081c2e7b.jpg"
+        "imageURL": "https://i.pinimg.com/236x/fc/1f/fb/fc1ffbee3426a07f8e821145081c2e7b.jpg",
+        "ingredients": [
+            "Lasagna noodles",
+            "500g ground beef",
+            "2 cups tomato sauce",
+            "1 cup ricotta cheese",
+            "1 cup mozzarella cheese",
+            "1/2 cup grated Parmesan"
+        ],
+        "instructions": [
+            "Preheat oven to 180°C (350°F).",
+            "Cook the lasagna noodles according to package instructions.",
+            "In a pan, brown the beef and mix with tomato sauce.",
+            "Layer the noodles, beef sauce, ricotta, and mozzarella in a baking dish.",
+            "Top with Parmesan and bake for 25-30 minutes."
+        ]
     }
 ]

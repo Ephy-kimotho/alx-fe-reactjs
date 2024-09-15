@@ -1,10 +1,11 @@
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-blue-500 text-2xl">Hello world</h1>
-    </div>
-  )
+    <main>
+      <Home />
+    </main>
+  );
 }
 
-export default App
+export default App;

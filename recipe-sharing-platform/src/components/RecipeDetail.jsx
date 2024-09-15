@@ -37,8 +37,8 @@ function RecipeDetail() {
   ));
 
   return (
-    <section className="bg-gray pb-6">
-      <article className="flex flex-col md:flex-row gap-4 p-3 bg-cyan rounded-lg  w-full">
+    <section className="bg-gray py-6">
+      <article className="flex flex-col md:flex-row gap-4 p-3 bg-cyan rounded-lg  w-[80%] mx-auto shadow-md">
         <img
           src={recipe.imageURL}
           alt={recipe.title}

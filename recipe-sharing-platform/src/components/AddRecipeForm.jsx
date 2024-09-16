@@ -17,17 +17,22 @@ function AddRecipeForm() {
 
   function validate() {
     const { title, description, ingredients, steps } = formData;
+    let isValid = true;
+
+    setErrors({ title: "", description: "", ingredients: "", steps: "" });
 
     if (title.length === 0) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         title: "Required",
       }));
+      isValid = false
     } else if (title.length < 5) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         title: "Too short",
       }));
+      isValid = false
     }
 
     if (description.length === 0) {
@@ -35,11 +40,13 @@ function AddRecipeForm() {
         ...prevErrors,
         description: "Required",
       }));
+      isValid = false
     } else if (description.length < 5) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         description: "Too short",
       }));
+      isValid = false
     }
 
     if (ingredients.length === 0) {
@@ -47,11 +54,13 @@ function AddRecipeForm() {
         ...prevErrors,
         ingredients: "Required",
       }));
+      isValid = false
     } else if (ingredients.split(",").length < 2) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         ingredients: "Enter two or more ingredients",
       }));
+      isValid = false
     }
 
     if (steps.length === 0) {
@@ -59,12 +68,16 @@ function AddRecipeForm() {
         ...prevErrors,
         steps: "Required",
       }));
+      isValid = false
     } else if (steps.split(",").length < 2) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         steps: "Enter two or more steps",
       }));
+      isValid = false
     }
+
+    return isValid
   }
 
   function handleChange(e) {
@@ -80,67 +93,103 @@ function AddRecipeForm() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    validate();
-    console.log("Form submitted");
+     const isValid = validate();
+    if (isValid) {
+      console.log("Form submitted.");
+    } else {
+      console.log("Form has errors.");
+    }
   }
 
   return (
-    <section>
-      <form onSubmit={handleSubmit}>
-        <h2>Add recipe to the list</h2>
+    <section className="h-screen bg-gray flex justify-center items-center">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-cyan py-3 px-4 shadow-md rounded w-4/5 md:w-3/5 my-16"
+      >
+        <h2 className="text-darkBlue text-center underline uppercase text-xl sm:text-3xl md:text-4xl font-bold">
+          Add recipe to the list
+        </h2>
 
-        <div>
-          <label htmlFor="title">Title: </label>
+        <div className="w-full mb-2">
+          <label htmlFor="title" className="text-lg font-bold">
+            Title:
+          </label>
           <input
             type="text"
             name="title"
             placeholder="Enter the title"
             value={formData.title}
             onChange={handleChange}
+            className={`w-full  p-2 text-base  rounded focus:outline focus:outline-green-500
+            focus:outline-2  ${
+              errors.title ? "outline outline-red outline-2" : ""
+            }`}
           />
-          {errors.title && <p className="text-red">{errors.title}</p>}
+          {errors.title && <p className="text-red text-base">{errors.title}</p>}
         </div>
 
-        <div>
-          <label htmlFor="description">Description: </label>
+        <div className="w-full mb-2">
+          <label htmlFor="description" className="text-lg font-bold">
+            Description:{" "}
+          </label>
           <input
             type="text"
             name="description"
             placeholder="Enter the description"
             value={formData.description}
             onChange={handleChange}
+            className={`w-full p-2 text-base rounded focus:outline focus:outline-green-500
+            focus:outline-2  ${
+              errors.description ? "outline outline-red outline-2" : ""
+            }`}
           />
           {errors.description && (
-            <p className="text-red">{errors.description}</p>
+            <p className="text-red text-base">{errors.description}</p>
           )}
         </div>
 
-        <div>
-          <label htmlFor="ingredients">Ingredients:</label>
+        <div className="w-full mb-2">
+          <label htmlFor="ingredients" className="text-lg font-bold">
+            Ingredients:
+          </label>
           <textarea
             name="ingredients"
             placeholder="Enter ingredients separated by a comma"
             value={formData.ingredients}
             onChange={handleChange}
+            className={`w-full p-2 h-20 text-base rounded focus:outline focus:outline-green-500 focus:outline-2  ${
+              errors.ingredients ? "outline outline-red outline-2" : ""
+            }`}
           />
           {errors.ingredients && (
-            <p className="text-red">{errors.ingredients}</p>
+            <p className="text-red text-base">{errors.ingredients}</p>
           )}
         </div>
 
-        <div>
-          <label htmlFor="steps">Preparation steps:</label>
+        <div className="w-full mb-2">
+          <label htmlFor="steps" className="text-lg font-bold">
+            Preparation steps:
+          </label>
           <textarea
             name="steps"
             placeholder="Enter preparation steps separated by a comma"
             value={formData.steps}
             onChange={handleChange}
+            className={`w-full p-2 h-20 text-base rounded focus:outline focus:outline-green-500 focus:outline-2  ${
+              errors.steps ? "outline outline-red outline-2" : ""
+            }`}
           />
-          {errors.steps && <p className="text-red">{errors.steps}</p>}
+          {errors.steps && <p className="text-red text-base">{errors.steps}</p>}
         </div>
 
-        <div>
-          <button type="submit">Add recipe</button>
+        <div className="w-full mb-2 text-center">
+          <button
+            type="submit"
+            className="w-3/5 sm:w-2/5 py-2 bg-darkBlue text-white rounded-md hover:bg-sky-700"
+          >
+            Add recipe
+          </button>
         </div>
       </form>
     </section>

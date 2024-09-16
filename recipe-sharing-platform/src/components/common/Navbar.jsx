@@ -6,9 +6,16 @@ function Navbar() {
       <nav className="text-white text-xl">
         <Link
           to="/"
-          className="mx-1 no-underline hover:text-sky-300 hover:underline underline-offset-4"
+          className="mx-3 no-underline hover:text-sky-300 hover:underline underline-offset-4"
         >
           Home
+        </Link>
+
+        <Link
+          to="addrecipe"
+          className="mx-3 no-underline hover:text-sky-300 hover:underline underline-offset-4"
+        >
+          Add recipe
         </Link>
       </nav>
     </header>

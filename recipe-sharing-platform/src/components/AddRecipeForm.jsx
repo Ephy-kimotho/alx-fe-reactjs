@@ -27,7 +27,7 @@ function AddRecipeForm() {
     return () => clearTimeout(handler);
   }, [formData]);
 
-  const form = useRef(null)
+  const form = useRef(null);
 
   function validate() {
     const { title, description, ingredients, steps } = debouncedFormData;
@@ -94,10 +94,9 @@ function AddRecipeForm() {
     return isValid;
   }
 
-  
-
   function handleChange(e) {
-    const { name, value } = e.target;
+    const name = e.target.name;
+    const value = e.target.value;
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
@@ -116,8 +115,8 @@ function AddRecipeForm() {
         .filter((item) => item.trim().length > 0),
     };
 
-    setRecipes((prevRecipes => [...prevRecipes, newRecipe]))
-    form.current.reset(); 
+    setRecipes((prevRecipes) => [...prevRecipes, newRecipe]);
+    form.current.reset();
     setFormData({
       title: "",
       description: "",
@@ -131,13 +130,13 @@ function AddRecipeForm() {
 
     const isValid = validate();
     if (isValid) {
-        postRecipe()
+      postRecipe();
     } else {
       console.log("Form has errors.");
     }
   }
 
-  useEffect(() => console.log("recipes: ", recipes), [recipes])
+  useEffect(() => console.log("recipes: ", recipes), [recipes]);
 
   return (
     <section className="h-screen bg-gray flex justify-center items-center">

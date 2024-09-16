@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { nanoid } from "nanoid";
 
 function AddRecipeForm() {
   const [formData, setFormData] = useState({
@@ -15,8 +16,21 @@ function AddRecipeForm() {
     steps: "",
   });
 
+  const [debouncedFormData, setDebouncedFormData] = useState(formData);
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedFormData(formData);
+    }, 500);
+
+    return () => clearTimeout(handler);
+  }, [formData]);
+
+  const form = useRef(null)
+
   function validate() {
-    const { title, description, ingredients, steps } = formData;
+    const { title, description, ingredients, steps } = debouncedFormData;
     let isValid = true;
 
     setErrors({ title: "", description: "", ingredients: "", steps: "" });
@@ -26,13 +40,13 @@ function AddRecipeForm() {
         ...prevErrors,
         title: "Required",
       }));
-      isValid = false
+      isValid = false;
     } else if (title.length < 5) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         title: "Too short",
       }));
-      isValid = false
+      isValid = false;
     }
 
     if (description.length === 0) {
@@ -40,13 +54,13 @@ function AddRecipeForm() {
         ...prevErrors,
         description: "Required",
       }));
-      isValid = false
+      isValid = false;
     } else if (description.length < 5) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         description: "Too short",
       }));
-      isValid = false
+      isValid = false;
     }
 
     if (ingredients.length === 0) {
@@ -54,13 +68,13 @@ function AddRecipeForm() {
         ...prevErrors,
         ingredients: "Required",
       }));
-      isValid = false
+      isValid = false;
     } else if (ingredients.split(",").length < 2) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         ingredients: "Enter two or more ingredients",
       }));
-      isValid = false
+      isValid = false;
     }
 
     if (steps.length === 0) {
@@ -68,42 +82,67 @@ function AddRecipeForm() {
         ...prevErrors,
         steps: "Required",
       }));
-      isValid = false
+      isValid = false;
     } else if (steps.split(",").length < 2) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         steps: "Enter two or more steps",
       }));
-      isValid = false
+      isValid = false;
     }
 
-    return isValid
+    return isValid;
   }
 
+  
+
   function handleChange(e) {
-    const { name, value } = e.target.value;
+    const { name, value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
     }));
   }
 
-  //function postData(){}
+  function postRecipe() {
+    const newRecipe = {
+      ...debouncedFormData,
+      id: nanoid(),
+      ingredients: debouncedFormData.ingredients
+        .split(",")
+        .filter((item) => item.trim().length > 0),
+      steps: debouncedFormData.steps
+        .split(",")
+        .filter((item) => item.trim().length > 0),
+    };
+
+    setRecipes((prevRecipes => [...prevRecipes, newRecipe]))
+    form.current.reset(); 
+    setFormData({
+      title: "",
+      description: "",
+      ingredients: "",
+      steps: "",
+    });
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
 
-     const isValid = validate();
+    const isValid = validate();
     if (isValid) {
-      console.log("Form submitted.");
+        postRecipe()
     } else {
       console.log("Form has errors.");
     }
   }
 
+  useEffect(() => console.log("recipes: ", recipes), [recipes])
+
   return (
     <section className="h-screen bg-gray flex justify-center items-center">
       <form
+        ref={form}
         onSubmit={handleSubmit}
         className="bg-cyan py-3 px-4 shadow-md rounded w-4/5 md:w-3/5 my-16"
       >

@@ -20,7 +20,7 @@ function Search() {
       if (response.status >= 200 && response.status < 300) {
         setUserData(response.data);
       } else {
-        setError("Looks like we can't find the user.");
+        setError("Looks like we cant find the user");
       }
     } catch (error) {
       setError("An error ocurred, please try again later");
@@ -73,7 +73,7 @@ function Search() {
             />
 
             <div>
-              <h3 className="text-2xl text-teal">{userData.name}</h3>
+              <h3 className="text-2xl text-teal">{userData.login}</h3>
               <a
                 href={userData.html_url}
                 target="_blank"

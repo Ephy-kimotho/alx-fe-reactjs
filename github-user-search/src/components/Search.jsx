@@ -97,7 +97,15 @@ function Search() {
             Loading...
           </p>
         )}
+
+        {userData && userData.length === 0 && (
+          <p className="text-red text-center text-lg uppercase font-bold">
+            No such user found !
+          </p>
+        )}
+
         {userData &&
+          userData.length > 0 &&
           userData.map((item) => (
             <article
               key={item.id}
@@ -110,11 +118,11 @@ function Search() {
               />
 
               <div>
-                <h3 className="text-xl sm:text-3xl text-teal">{item.login}</h3>
+                <h3 className="text-xl sm:text-3xl text-white">{item.login}</h3>
                 <a
                   href={item.html_url}
                   target="_blank"
-                  className=" text-teal text-base sm:text-lg hover:text-white hover:underline hover:underline-offset-4"
+                  className=" text-white text-base sm:text-lg hover:text-teal hover:underline hover:underline-offset-4"
                 >
                   View profile
                 </a>

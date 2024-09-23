@@ -11,6 +11,7 @@ function Search() {
     e.preventDefault();
 
     setError(null);
+    setSearchTerm("")
     setUserData(null);
     setIsloading(true);
 
@@ -30,12 +31,10 @@ function Search() {
     }
   };
 
-  console.log("User data", userData);
-
   return (
-    <section>
+    <section className="flex flex-col items-center mt-10 px-5">
       <form
-        className="mt-d text-white p-3 w-2/5 mx-auto mt-10 rounded-md flex gap-4 justify-between"
+        className="text-white py-3 rounded-md flex gap-4 justify-between"
         onSubmit={handleSubmit}
       >
         <input
@@ -44,7 +43,7 @@ function Search() {
           placeholder="Enter term..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="border-none grow pl-3 rounded  text-lg outline-none text-darkBlue focus:shadow-lg"
+          className="border-none grow pl-3 rounded  text-lg outline-none text-darkBlue focus:shadow-lg w-full"
         />
 
         <button
@@ -57,7 +56,7 @@ function Search() {
         </button>
       </form>
 
-      <div className="w-4/5 mx-auto mt-3">
+      <div className="w-full mt-3 ">
         {error && <p className="text-red text-center text-lg">{error}</p>}
 
         {isloading && (
@@ -65,19 +64,21 @@ function Search() {
         )}
 
         {userData && (
-          <article className="bg-darkBlue py-4 flex gap-4 items-center text-white w-4/5 mx-auto rounded shadow-md pl-8">
+          <article className="bg-darkBlue w-full sm:w-4/5  mx-auto p-4 flex gap-4 items-center rounded-lg shadow-md">
             <img
               src={userData.avatar_url}
               alt={`A photo of ${userData.name}`}
-              className="w-40 rounded-full "
+              className="w-1/5 rounded-full "
             />
 
             <div>
-              <h3 className="text-2xl text-teal">{userData.login}</h3>
+              <h3 className="text-xl sm:text-3xl text-teal">
+                {userData.login}
+              </h3>
               <a
                 href={userData.html_url}
                 target="_blank"
-                className=" text-teal hover:text-white hover:underline hover:underline-offset-4"
+                className=" text-teal text-base sm:text-lg hover:text-white hover:underline hover:underline-offset-4"
               >
                 View profile
               </a>

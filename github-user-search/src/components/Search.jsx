@@ -34,9 +34,6 @@ function Search() {
       setIsloading(false);
     }
   };
-
-  console.log(userData);
-
   return (
     <section className="flex h-screen flex-col items-center pt-2 px-5">
       <h2 className="text-xl sm:text-3xl text-darkBlue mt-3 font-bold uppercase">

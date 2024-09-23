@@ -3,6 +3,8 @@ import fetchUserData from "../services/githubService";
 
 function Search() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [location, setLocation] = useState("");
+  const [repos, setRepos] = useState("");
   const [userData, setUserData] = useState(null);
   const [error, setError] = useState(null);
   const [isloading, setIsloading] = useState(false);
@@ -10,16 +12,18 @@ function Search() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setSearchTerm("");
+    setLocation("");
+    setRepos("");
     setError(null);
-    setSearchTerm("")
     setUserData(null);
     setIsloading(true);
 
     try {
-      const response = await fetchUserData(searchTerm);
+      const response = await fetchUserData(searchTerm, location, repos);
 
       if (response.status >= 200 && response.status < 300) {
-        setUserData(response.data);
+        setUserData(response.data.items);
       } else {
         setError("Looks like we cant find the user");
       }
@@ -31,29 +35,51 @@ function Search() {
     }
   };
 
+  console.log(userData);
+
   return (
-    <section className="flex flex-col items-center mt-10 px-5">
+    <section className="flex h-screen flex-col items-center pt-10 px-5">
       <form
-        className="text-white py-3 rounded-md flex gap-4 justify-between"
+        className="text-white py-3 rounded-md flex flex-col gap-4 w-full sm:w-3/5"
         onSubmit={handleSubmit}
       >
         <input
           type="text"
           name="searchTerm"
-          placeholder="Enter term..."
+          placeholder="Enter term."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="border-none grow pl-3 rounded  text-lg outline-none text-darkBlue focus:shadow-lg w-full"
+          className="border-none grow pl-3  py-1 rounded text-lg outline-none text-darkBlue focus:shadow-lg w-5/5"
         />
 
-        <button
-          type="submit"
-          className={`py-2 px-8 bg-darkBlue rounded font-bold text-lg hover:bg-sky-900 active:scale-90 ${
-            isloading ? "cursor-not-allowed" : "cursor-pointer"
-          }`}
-        >
-          Search
-        </button>
+        <input
+          type="text"
+          name="location"
+          placeholder="Enter location (optional)."
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          className="border-none grow pl-3   py-1 rounded  text-lg outline-none text-darkBlue focus:shadow-lg w-5/5"
+        />
+
+        <input
+          type="text"
+          name="repos"
+          placeholder="Enter repository count (optional)."
+          value={repos}
+          onChange={(e) => setRepos(e.target.value)}
+          className="border-none grow pl-3   py-1 rounded  text-lg outline-none text-darkBlue focus:shadow-lg w-5/5"
+        />
+
+        <div className="text-center">
+          <button
+            type="submit"
+            className={`py-2 px-8 bg-darkBlue rounded font-bold text-lg hover:bg-sky-900 active:scale-90 ${
+              isloading ? "cursor-not-allowed" : "cursor-pointer"
+            } tracking-wider`}
+          >
+            Search
+          </button>
+        </div>
       </form>
 
       <div className="w-full mt-3 ">
@@ -62,29 +88,30 @@ function Search() {
         {isloading && (
           <p className="text-blue text-center text-lg">Loading...</p>
         )}
+        {userData &&
+          userData.map((item) => (
+            <article
+              key={item.id}
+              className="bg-darkBlue w-4/5 sm:w-4/5  mx-auto p-4 flex gap-4 items-center rounded-lg shadow-md mb-4"
+            >
+              <img
+                src={item.avatar_url}
+                alt={`A photo of ${item.name}`}
+                className="w-24 sm:w-36 rounded-full "
+              />
 
-        {userData && (
-          <article className="bg-darkBlue w-full sm:w-4/5  mx-auto p-4 flex gap-4 items-center rounded-lg shadow-md">
-            <img
-              src={userData.avatar_url}
-              alt={`A photo of ${userData.name}`}
-              className="w-1/5 rounded-full "
-            />
-
-            <div>
-              <h3 className="text-xl sm:text-3xl text-teal">
-                {userData.login}
-              </h3>
-              <a
-                href={userData.html_url}
-                target="_blank"
-                className=" text-teal text-base sm:text-lg hover:text-white hover:underline hover:underline-offset-4"
-              >
-                View profile
-              </a>
-            </div>
-          </article>
-        )}
+              <div>
+                <h3 className="text-xl sm:text-3xl text-teal">{item.login}</h3>
+                <a
+                  href={item.html_url}
+                  target="_blank"
+                  className=" text-teal text-base sm:text-lg hover:text-white hover:underline hover:underline-offset-4"
+                >
+                  View profile
+                </a>
+              </div>
+            </article>
+          ))}
       </div>
     </section>
   );

@@ -38,7 +38,10 @@ function Search() {
   console.log(userData);
 
   return (
-    <section className="flex h-screen flex-col items-center pt-10 px-5">
+    <section className="flex h-screen flex-col items-center pt-2 px-5">
+      <h2 className="text-xl sm:text-3xl text-darkBlue mt-3 font-bold uppercase">
+        Github user search app
+      </h2>
       <form
         className="text-white py-3 rounded-md flex flex-col gap-4 w-full sm:w-3/5"
         onSubmit={handleSubmit}
@@ -46,7 +49,7 @@ function Search() {
         <input
           type="text"
           name="searchTerm"
-          placeholder="Enter term."
+          placeholder="Enter username."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="border-none grow pl-3  py-1 rounded text-lg outline-none text-darkBlue focus:shadow-lg w-5/5"
@@ -73,7 +76,7 @@ function Search() {
         <div className="text-center">
           <button
             type="submit"
-            className={`py-2 px-8 bg-darkBlue rounded font-bold text-lg hover:bg-sky-900 active:scale-90 ${
+            className={`py-2 px-8 sm:px-16 sm:text-xl bg-darkBlue rounded font-bold text-lg hover:bg-sky-900 active:scale-90 ${
               isloading ? "cursor-not-allowed" : "cursor-pointer"
             } tracking-wider`}
           >
@@ -83,10 +86,16 @@ function Search() {
       </form>
 
       <div className="w-full mt-3 ">
-        {error && <p className="text-red text-center text-lg">{error}</p>}
+        {error && (
+          <p className="text-red text-center text-lg uppercase font-bold">
+            {error}
+          </p>
+        )}
 
         {isloading && (
-          <p className="text-blue text-center text-lg">Loading...</p>
+          <p className="text-blue text-center text-lg uppercase font-bold">
+            Loading...
+          </p>
         )}
         {userData &&
           userData.map((item) => (

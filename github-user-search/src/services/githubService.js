@@ -24,8 +24,8 @@ function getURL(username, location, repos) {
   return url;
 }
 
-async function fetchUserData(username, location, repos) {
-  const url = getURL(username, location, repos);
+async function fetchUserData(username, location, minRepos) {
+  const url = getURL(username, location, minRepos);
   try {
     const response = await axios.get(url);
     return response;

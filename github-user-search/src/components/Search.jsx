@@ -106,7 +106,7 @@ function Search() {
           userData.map((item) => (
             <article
               key={item.id}
-              className="bg-darkBlue w-4/5 sm:w-4/5  mx-auto p-4 flex gap-4 items-center rounded-lg shadow-md mb-4"
+              className="bg-darkBlue w-full sm:w-4/5  mx-auto p-4 flex gap-4 items-center rounded-lg shadow-md mb-4"
             >
               <img
                 src={item.avatar_url}
